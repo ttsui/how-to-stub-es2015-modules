@@ -1,15 +1,15 @@
 import expect from "must";
 import sinon from "sinon";
-import * as clock from "./clock";
+import * as thermometer from "./thermometer";
 import * as dashboard from "./dashboard";
 
 describe("Dashboard", function() {
-  it("displays the time", function() {
-    sinon.stub(clock, "now");
-    clock.now.returns(new Date("2011-10-10T14:48:00+0100"));
+  it("displays the temperature", function() {
+    sinon.stub(thermometer, "currentTemperature");
+    thermometer.currentTemperature.returns(21);
 
-    expect(dashboard.time()).to.eql("14:48");
+    expect(dashboard.temperature()).to.eql("21 C");
 
-    clock.now.restore();
+    thermometer.currentTemperature.restore();
   });
 });

@@ -1,7 +1,3 @@
-import * as clock from "./clock";
+import { currentTemperature } from "./thermometer";
 
-export const time = () => {
-  const theTime = clock.now();
-
-  return `${theTime.getHours()}:${theTime.getMinutes()}`;
-};
+export const temperature = () => `${currentTemperature()} C`;
