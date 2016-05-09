@@ -4,12 +4,13 @@ import * as thermometer from "./thermometer";
 import * as dashboard from "./dashboard";
 
 describe("Dashboard", function() {
-  it("displays temperature with Celsius scale", function() {
-    sinon.stub(thermometer, "currentTemperature");
-    thermometer.currentTemperature.returns(21);
+  it("format temperature with Celsius scale", function() {
+    sinon.stub(thermometer, "getTemperature");
+    thermometer.getTemperature.returns(21);
 
-    expect(dashboard.temperature()).to.eql("21° C");
+    expect(dashboard.formatTemperature()).to.eql("21° C");
 
-    thermometer.currentTemperature.restore();
+    // IMPORTANT: Undo stubbing or elses getTemperature() will be stubbed in other tests.
+    thermometer.getTemperature.restore();
   });
 });

@@ -1,3 +1,3 @@
-import { currentTemperature } from "./thermometer";
+import { getTemperature } from "./thermometer";
 
-export const temperature = () => `${ currentTemperature() }° C`;
+export const formatTemperature = () => `${ getTemperature() }° C`;
