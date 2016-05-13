@@ -1,7 +1,7 @@
 import expect from "must";
 import sinon from "sinon";
-import * as thermometer from "./thermometer";
-import * as dashboard from "./dashboard";
+import * as thermometer from "../src/thermometer";
+import * as dashboard from "../src/dashboard";
 
 describe("Dashboard", function() {
   it("format temperature with Celsius scale", function() {
